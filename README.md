@@ -4,9 +4,10 @@ YouTube clone project built with React and TypeScript.
 
 ## Tech Stack
 
-- React
-- TypeScript
-- CRA (Create React App)
+- **React**
+- **TypeScript**
+- **CRA (Create React App)**
+- [**react-icons**](https://react-icons.github.io/react-icons/)
 
 ## Features (계획 중)
 

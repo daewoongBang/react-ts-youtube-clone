@@ -2,7 +2,7 @@ import MainLayout from 'layouts/MainLayout';
 import NotFound from 'pages/errors/NotFound';
 import Home from 'pages/Home';
 import VideoDetail from 'pages/video/Detail';
-import VideoSearch from 'pages/video/Search';
+import VideoSearchList from 'pages/video/SearchList';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'search/:query',
-        element: <VideoSearch />,
+        path: 'search',
+        element: <VideoSearchList />,
       },
       {
         path: 'watch',

@@ -1,10 +1,10 @@
-import Header from 'components/layout/Header';
+import SearchHeader from 'components/layout/SearchHeader';
 import { Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
   return (
     <div>
-      <Header />
+      <SearchHeader />
       <Outlet />
     </div>
   );
