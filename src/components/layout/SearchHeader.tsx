@@ -22,7 +22,7 @@ const SearchHeader = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    navigate(`/search?query=${searchText}`);
+    !!searchText.trim() && navigate(`/search?query=${searchText}`);
   };
 
   useEffect(() => {
