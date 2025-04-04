@@ -14,7 +14,7 @@ const VideoSearchList = () => {
 
   const { isLoading, data, error } = useQuery({
     queryKey: ['videos', query],
-    queryFn: async () => getSearchVideos(query || ''),
+    queryFn: () => getSearchVideos(query || ''),
     enabled: !!query,
   });
 

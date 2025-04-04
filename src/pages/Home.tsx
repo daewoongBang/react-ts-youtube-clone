@@ -9,7 +9,7 @@ import { getPopularVideos } from 'apis/video';
 const Home = () => {
   const { isLoading, data, error } = useQuery({
     queryKey: ['videos', 'popular'],
-    queryFn: async () => getPopularVideos(),
+    queryFn: () => getPopularVideos(),
   });
 
   return (
