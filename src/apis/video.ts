@@ -37,3 +37,29 @@ export const getSearchVideos = useMockApi
           },
         })
         .then((res) => res.data.items);
+
+export const getChannelInfo = useMockApi
+  ? mock.getChannelInfo
+  : async (channelId: string) =>
+      await httpClient
+        .get('channels', {
+          params: {
+            part: 'snippet',
+            id: channelId,
+          },
+        })
+        .then((res) => res.data.items);
+
+export const getRelatedVideos = useMockApi
+  ? mock.getRelatedVideos
+  : async () =>
+      await httpClient
+        .get('videos', {
+          params: {
+            part: 'snippet',
+            chart: 'mostPopular',
+            maxResults: 40,
+            regionCode: 'KR',
+          },
+        })
+        .then((res) => res.data.items);

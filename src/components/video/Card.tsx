@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import { formatRelativeTime } from 'utils/date';
+import { formatViews } from 'utils/string';
 
 interface VideoCardProps {
   video: any;
@@ -12,17 +13,21 @@ const VideoCard = ({ video }: VideoCardProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/watch/${video.id || video.id.videoId}`);
+    navigate(`/watch/${video.id || video.id.videoId}`, { state: { video } });
   };
 
   return (
-    <li className='w-1/5 cursor-pointer' onClick={handleClick}>
-      <img src={snippet.thumbnails.medium.url} alt={snippet.title} />
+    <li className='w-full cursor-pointer' onClick={handleClick}>
+      <img
+        className='rounded-md'
+        src={snippet.thumbnails.medium.url}
+        alt={snippet.title}
+      />
       <div>
-        <p>{snippet.title}</p>
-        <p>{snippet.channelTitle}</p>
-        <p>
-          조회수 {statistics.viewCount} •{' '}
+        <p className='font-semibold line-clamp-2'>{snippet.title}</p>
+        <p className='text-sm opacity-80'>{snippet.channelTitle}</p>
+        <p className='text-sm opacity-80'>
+          {statistics && `조회수 ${formatViews(statistics.viewCount)} • `}
           {formatRelativeTime(snippet.publishedAt)}
         </p>
       </div>

@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  list-style: none;
   @apply flex flex-col items-center;
   @apply bg-zinc-900 text-gray-50;
 }

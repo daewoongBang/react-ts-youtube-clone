@@ -11,6 +11,13 @@ YouTube clone project built with React and TypeScript.
 - [**TanStack Query (react-query)**](https://tanstack.com/query/latest)
 - [**react-icons**](https://react-icons.github.io/react-icons/)
 
-## Features (계획 중)
+## Features
 
-- YouTube API를 활용한 영상 검색
+- [x] 영상 목록 조회
+- [x] 영상 상세 페이지
+- [x] 영상 검색
+
+## Issues
+
+YouTube Data API에서 더 이상 `relatedVideos` API를 지원하지 않아,
+실제 연관 영상처럼 보여주기 위해 **해당 부분은 `mostPopular` API를 기반으로 대체 구현**하였습니다.

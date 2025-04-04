@@ -12,8 +12,6 @@ const Home = () => {
     queryFn: () => getPopularVideos(),
   });
 
-  console.log(data);
-
   return (
     <>
       {isLoading && <Loading />}
@@ -21,7 +19,7 @@ const Home = () => {
       {error && <Error />}
 
       {data && (
-        <ul className='flex flex-wrap gap-4'>
+        <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 gap-y-4'>
           {data.map((item: any) => (
             <VideoCard key={`video-${item.id}`} video={item} />
           ))}
