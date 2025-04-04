@@ -12,16 +12,21 @@ const Home = () => {
     queryFn: () => getPopularVideos(),
   });
 
+  console.log(data);
+
   return (
     <>
       {isLoading && <Loading />}
 
       {error && <Error />}
 
-      {data &&
-        data.map((item: any) => (
-          <VideoCard key={`video-${item.id}`} video={item} />
-        ))}
+      {data && (
+        <ul className='flex flex-wrap gap-4'>
+          {data.map((item: any) => (
+            <VideoCard key={`video-${item.id}`} video={item} />
+          ))}
+        </ul>
+      )}
     </>
   );
 };
