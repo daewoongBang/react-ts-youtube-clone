@@ -13,6 +13,7 @@ const RelatedVideos = ({ videoId }: RelatedVideosProps) => {
   const { isLoading, data, error } = useQuery({
     queryKey: ['videos', 'related', videoId],
     queryFn: () => getRelatedVideos(),
+    staleTime: 1000 * 60 * 5,
   });
 
   return (

@@ -13,6 +13,7 @@ const ChannelInfo = ({ channelId, title }: ChannelInfoProps) => {
   const { isLoading, data, error } = useQuery({
     queryKey: ['channelInfo', channelId],
     queryFn: () => getChannelInfo(channelId),
+    staleTime: 1000 * 60 * 5,
   });
 
   return (
