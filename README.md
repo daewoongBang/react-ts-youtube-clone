@@ -20,4 +20,4 @@ YouTube clone project built with React and TypeScript.
 ## Issues
 
 YouTube Data API에서 더 이상 `relatedVideos` API를 지원하지 않아,
-실제 연관 영상처럼 보여주기 위해 **해당 부분은 `mostPopular` API를 기반으로 대체 구현**하였습니다.
+**해당 부분은 `mostPopular` API를 기반으로 대체 구현**하였습니다.

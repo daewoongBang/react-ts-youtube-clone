@@ -22,7 +22,7 @@ const RelatedVideos = ({ videoId }: RelatedVideosProps) => {
       {data && (
         <ul>
           {data.map((item: any) => (
-            <VideoCard key={`video-${item.id}`} video={item} />
+            <VideoCard key={`video-${item.id}`} video={item} type='list' />
           ))}
         </ul>
       )}

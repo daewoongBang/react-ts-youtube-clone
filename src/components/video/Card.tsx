@@ -5,21 +5,30 @@ import { formatViews } from 'utils/string';
 
 interface VideoCardProps {
   video: any;
+  type?: 'list' | 'search';
 }
 
-const VideoCard = ({ video }: VideoCardProps) => {
+const VideoCard = ({ video, type }: VideoCardProps) => {
   const { snippet, statistics } = video;
 
   const navigate = useNavigate();
+
+  const isList = type === 'list';
+  const isSearch = type === 'search';
 
   const handleClick = () => {
     navigate(`/watch/${video.id || video.id.videoId}`, { state: { video } });
   };
 
   return (
-    <li className='w-full cursor-pointer' onClick={handleClick}>
+    <li
+      className={`${isList || isSearch ? 'flex gap-1 m-2' : ''} cursor-pointer`}
+      onClick={handleClick}
+    >
       <img
-        className='rounded-md'
+        className={`${
+          isList ? 'w-60 mr-2' : isSearch ? 'w-1/3' : 'w-full'
+        } rounded-md`}
         src={snippet.thumbnails.medium.url}
         alt={snippet.title}
       />

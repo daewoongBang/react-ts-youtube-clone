@@ -27,7 +27,7 @@ const VideoSearchList = () => {
       {data?.length > 0 ? (
         <div>
           {data.map((item: any) => (
-            <VideoCard key={item.id.videoId} video={item} />
+            <VideoCard key={item.id.videoId} video={item} type='search' />
           ))}
         </div>
       ) : (

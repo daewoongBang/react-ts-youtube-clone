@@ -14,24 +14,24 @@ const VideoDetail = () => {
   const { snippet } = video;
 
   return (
-    <div>
-      <article>
+    <section className='flex flex-col lg:flex-row'>
+      <article className='basis-4/6'>
         <VideoPlayer videoId={videoId} />
 
-        <div>
-          <h2>{snippet.title}</h2>
+        <div className='p-4'>
+          <h2 className='text-2xl font-bold'>{snippet.title}</h2>
           <ChannelInfo
             channelId={snippet.channelId}
             title={snippet.channelTitle}
           />
-          <pre>{snippet.description}</pre>
+          <pre className='whitespace-pre-wrap'>{snippet.description}</pre>
         </div>
       </article>
 
-      <section>
+      <section className='basis-2/6'>
         <RelatedVideos videoId={snippet.channelId} />
       </section>
-    </div>
+    </section>
   );
 };
 

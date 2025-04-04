@@ -20,12 +20,13 @@ const ChannelInfo = ({ channelId, title }: ChannelInfoProps) => {
       {isLoading && <Loading />}
       {error && <Error />}
       {data && (
-        <div>
+        <div className='flex items-center gap-2 my-4 mb-8'>
           <img
+            className='w-10 h-10 rounded-full'
             src={data[0].snippet.thumbnails.default.url}
             alt={data[0].snippet.title}
           />
-          <p>{title}</p>
+          <p className='text-lg font-medium ml-2'>{title}</p>
         </div>
       )}
     </>
